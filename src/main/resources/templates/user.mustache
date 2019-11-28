@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>User Details</title>
+    <style>
+        tr,td{
+            font-size: 30px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+</head>
+<body>
+<h1>View User</h1>
+<a href="/read">Back to User List</a>
+<br/><br/>
+{{#user}}
+    <table border="0">
+        <tr>
+            <td>ID</td>
+            <td>:</td>
+            <td>{{user.id}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>:</td>
+            <td>{{user.email}}</td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>:</td>
+            <td>{{user.password}}</td>
+        </tr>
+    </table>
+    <br/><br/>
+    {{#allowDelete}}
+        <form action="/read/{{user.id}}/delete" method="POST">
+            Delete this user? <input type="submit" value="Yes" />
+        </form>
+    {{/allowDelete}}
+    {{^allowDelete}}
+        <div>
+            <a href="/read/{{user.id}}/delete">Delete</a>
+        </div>
+    {{/allowDelete}}
+{{/user}}
+</body>
+</html>

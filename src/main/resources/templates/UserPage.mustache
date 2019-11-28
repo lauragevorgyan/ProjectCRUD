@@ -1,0 +1,23 @@
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <style>
+        a{
+            color: #f44336;
+            font-size: 25px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> Login times </h1>
+        <!-- Time where user log in -->
+        {{#times}}
+            <ul>
+                <li>{{.}}</li>
+            </ul>
+        {{/times}}
+        <a href="/index">Log out</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Admin Page !</title>
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <style>
+        div{
+            width: 100%;
+        }
+        h2{
+            font-size: 25px;
+            color: white;
+        }
+        a{
+            color: white;
+            font-size: 15px;
+        }
+        tr,th,td{
+            color: white;
+            font-size: 25px;
+        }
+        th{
+            width: 33%;
+        }
+    </style>
+</head>
+<body>
+        <h1>Welcome to Admin Page</h1>
+        <h2>User List</h2>
+        <br/><br/>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>Id</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                </tr>
+                {{#users}}
+                    <tr>
+                        <td><a href="/read/{{id}}">{{id}}</a></td>
+                        <td><a href="/read/{{id}}">{{email}}</a></td>
+                        <td><a href="/read/{{id}}">{{password}}</a></td>
+                        <td><a href="/read/{{id}}/delete">Delete</a></td>
+                    </tr>
+                {{/users}}
+            </table>
+        </div>
+<a href="/index" style="color: #f44336; font-size: 25px;">Log out</a>
+</body>
+</html>
